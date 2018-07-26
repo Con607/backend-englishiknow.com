@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_section_id: 1
+  name: MyString
+  author_id: 1
+  duration: 1
+  preview: false
+  comment_ids: 1
+  content_text_ids: 1
+  cont_trans_sentence_to_eng_ids: 1
+
+two:
+  course_section_id: 1
+  name: MyString
+  author_id: 1
+  duration: 1
+  preview: false
+  comment_ids: 1
+  content_text_ids: 1
+  cont_trans_sentence_to_eng_ids: 1

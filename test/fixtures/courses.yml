@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author_id: 1
+  student_id: 1
+  reviewed: false
+  published: false
+  course_section_ids: 1
+  course_category_ids: 1
+  title: MyString
+  description: MyText
+  duration: 1
+  max_students: 1
+  featured: false
+  passing_mark: 1
+  course_payment: false
+  price: 1
+  sale_price: 1
+  sale_start_date: 2018-07-26 11:48:44
+  sale_end_date: 2018-07-26 11:48:44
+  feature_image: MyString
+
+two:
+  author_id: 1
+  student_id: 1
+  reviewed: false
+  published: false
+  course_section_ids: 1
+  course_category_ids: 1
+  title: MyString
+  description: MyText
+  duration: 1
+  max_students: 1
+  featured: false
+  passing_mark: 1
+  course_payment: false
+  price: 1
+  sale_price: 1
+  sale_start_date: 2018-07-26 11:48:44
+  sale_end_date: 2018-07-26 11:48:44
+  feature_image: MyString

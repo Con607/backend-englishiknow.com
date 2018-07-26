@@ -1,0 +1,2 @@
+class ContentText < ApplicationRecord
+end
