@@ -8,7 +8,7 @@ class CreateLessons < ActiveRecord::Migration[5.1]
       t.boolean :preview
       t.integer :comment_ids
       t.integer :content_text_ids
-      t.integer :cont_trans_sentence_to_eng_ids
+      t.integer :cont_trans_sentence_to_english_ids
 
       t.timestamps
     end

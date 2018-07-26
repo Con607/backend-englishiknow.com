@@ -19,6 +19,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
       t.datetime :sale_start_date
       t.datetime :sale_end_date
       t.string :feature_image
+      t.integer :lesson_ids
 
       t.timestamps
     end

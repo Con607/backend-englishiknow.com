@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20180726171533) do
     t.datetime "sale_start_date"
     t.datetime "sale_end_date"
     t.string "feature_image"
+    t.integer "lesson_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -90,7 +91,7 @@ ActiveRecord::Schema.define(version: 20180726171533) do
     t.boolean "preview"
     t.integer "comment_ids"
     t.integer "content_text_ids"
-    t.integer "cont_trans_sentence_to_eng_ids"
+    t.integer "cont_trans_sentence_to_english_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
