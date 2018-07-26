@@ -2,7 +2,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
   def change
     create_table :courses do |t|
       t.integer :author_id
-      t.integer :student_id
+      t.integer :student_ids
       t.boolean :reviewed
       t.boolean :published
       t.integer :course_section_ids

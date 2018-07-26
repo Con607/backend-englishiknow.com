@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20180726171533) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "author_id"
-    t.integer "student_id"
+    t.integer "student_ids"
     t.boolean "reviewed"
     t.boolean "published"
     t.integer "course_section_ids"

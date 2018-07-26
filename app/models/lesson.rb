@@ -1,4 +1,7 @@
 class Lesson < ApplicationRecord
+  validates :course_section_id, :name, :author_id,
+              :preview, presence: true
+
   belongs_to :course_section
   belongs_to :author
   has_many :comments
