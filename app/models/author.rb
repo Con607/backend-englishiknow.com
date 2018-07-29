@@ -1,5 +1,5 @@
 class Author < ApplicationRecord
-  validates :course_ids, presence: true
+  #validates :course_ids, presence: true
   # validates :user_id, presence: true
 
   has_many :courses

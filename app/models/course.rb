@@ -1,10 +1,9 @@
 class Course < ApplicationRecord
-  validates :author_id, :title, :passing_mark, :course_payment,
-              :price, presence: true
+  validates :author_id, :title, :passing_mark, :price, presence: true
 
   belongs_to :author
-  has_many :students
-  has_many :lessons
+  #belongs_to :course_categories
   has_many :course_sections
-  has_many :course_categories
+  has_many :student_courses
+  has_many :students, through: :student_courses
 end

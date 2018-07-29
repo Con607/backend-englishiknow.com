@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726171533) do
+ActiveRecord::Schema.define(version: 20180729163102) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20180726171533) do
     t.boolean "reviewed"
     t.boolean "published"
     t.integer "course_section_ids"
-    t.integer "course_category_ids"
+    t.integer "course_category_id"
     t.string "title"
     t.text "description"
     t.integer "duration"
@@ -121,6 +121,13 @@ ActiveRecord::Schema.define(version: 20180726171533) do
     t.text "description"
     t.integer "quiz_question_ids"
     t.integer "quiz_answer_ids"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "student_id"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

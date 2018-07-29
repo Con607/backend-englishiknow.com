@@ -6,7 +6,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
       t.boolean :reviewed
       t.boolean :published
       t.integer :course_section_ids
-      t.integer :course_category_ids
+      t.integer :course_category_id
       t.string :title
       t.text :description
       t.integer :duration
