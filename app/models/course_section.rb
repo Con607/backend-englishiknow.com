@@ -1,7 +1,7 @@
 class CourseSection < ApplicationRecord
-  validates :course_id, :name, presence: true
+  validates :name, presence: true
 
-  belongs_to :course
-  belongs_to :lesson
+  belongs_to :course, optional: true
+  belongs_to :lesson, optional: true
   has_one :quiz
 end
