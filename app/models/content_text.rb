@@ -1,5 +1,5 @@
 class ContentText < ApplicationRecord
-  validates :lesson_id, :content, presence: true
+  validates :lesson_id, :name,  presence: true
 
   belongs_to :lesson
 end

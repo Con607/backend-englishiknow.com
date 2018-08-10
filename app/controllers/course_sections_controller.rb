@@ -18,7 +18,9 @@ class CourseSectionsController < ApplicationController
     @course_section = CourseSection.new(course_section_params)
 
     if @course_section.save
-      render json: @course_section, status: :created, location: @course_section
+      # Send all the course with its sections back to the user
+      @course = @course_section.course
+      render json: @course, status: :created, location: @course
     else
       render json: @course_section.errors, status: :unprocessable_entity
     end
@@ -27,7 +29,9 @@ class CourseSectionsController < ApplicationController
   # PATCH/PUT /course_sections/1
   def update
     if @course_section.update(course_section_params)
-      render json: @course_section
+      # Send all the course with its sections back to the user
+      @course = @course_section.course
+      render json: @course
     else
       render json: @course_section.errors, status: :unprocessable_entity
     end
@@ -35,7 +39,12 @@ class CourseSectionsController < ApplicationController
 
   # DELETE /course_sections/1
   def destroy
+    # Send all the course with its sections back to the user
+    @course = @course_section.course
+
     @course_section.destroy
+
+    render json: @course
   end
 
   private

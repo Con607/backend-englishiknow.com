@@ -35,7 +35,12 @@ class LessonsController < ApplicationController
 
   # DELETE /lessons/1
   def destroy
+    # Send all the course with its sections back to the user
+    @course = @lesson.course_section.course
+
     @lesson.destroy
+
+    render json: @course
   end
 
   private

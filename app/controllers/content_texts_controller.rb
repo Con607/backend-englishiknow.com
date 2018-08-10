@@ -18,7 +18,10 @@ class ContentTextsController < ApplicationController
     @content_text = ContentText.new(content_text_params)
 
     if @content_text.save
-      render json: @content_text, status: :created, location: @content_text
+      # Return the complete lesson to update the view
+      @lesson = @content_text.lesson
+
+      render json: @lesson, status: :created, location: @content_text
     else
       render json: @content_text.errors, status: :unprocessable_entity
     end
@@ -35,7 +38,12 @@ class ContentTextsController < ApplicationController
 
   # DELETE /content_texts/1
   def destroy
+    # Return the complete lesson to update the view
+    @lesson = @content_text.lesson
+
     @content_text.destroy
+
+    render json: @lesson
   end
 
   private
@@ -46,6 +54,6 @@ class ContentTextsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def content_text_params
-      params.require(:content_text).permit(:lesson_id, :content)
+      params.require(:content_text).permit(:lesson_id, :name, :content)
     end
 end

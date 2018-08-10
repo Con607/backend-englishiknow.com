@@ -1,6 +1,5 @@
 class Lesson < ApplicationRecord
-  validates  :name, :author_id,
-              :preview, presence: true
+  validates  :name, :author_id, presence: true
 
   belongs_to :course_section
   belongs_to :author
