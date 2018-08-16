@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180810010137) do
+ActiveRecord::Schema.define(version: 20180815042927) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20180810010137) do
     t.string "sentence"
     t.string "translation"
     t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
+  create_table "cont_trans_sentence_spanishes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "sentence"
+    t.string "translation"
+    t.string "answer"
+    t.integer "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,6 +107,7 @@ ActiveRecord::Schema.define(version: 20180810010137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "course_id"
+    t.integer "cont_trans_sentence_spanish_ids"
   end
 
   create_table "quiz_answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

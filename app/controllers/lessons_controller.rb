@@ -51,6 +51,7 @@ class LessonsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def lesson_params
-      params.require(:lesson).permit(:course_section_id, :name, :author_id, :duration, :preview, :comment_ids, :content_text_ids, :cont_trans_sentence_to_eng_ids)
+      params.require(:lesson).permit(:course_section_id, :name, :author_id, :duration, :preview, :comment_ids,
+        :content_text_ids, :cont_trans_sentence_to_eng_ids)
     end
 end

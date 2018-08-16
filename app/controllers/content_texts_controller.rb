@@ -3,8 +3,12 @@ class ContentTextsController < ApplicationController
 
   # GET /content_texts
   def index
-    @content_texts = ContentText.all
-
+    if params[:lesson_id]
+      @content_texts = ContentText.where(lesson_id: params[:lesson_id])
+    else
+      @content_texts = ContentText.all
+    end
+    
     render json: @content_texts
   end
 
