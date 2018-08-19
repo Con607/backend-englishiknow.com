@@ -11,6 +11,8 @@
 
      resource '*',
        headers: :any,
-       methods: [:get, :post, :put, :patch, :delete, :options, :head]
+       methods: :any,
+       expose: %w(Authorization),
+       max_age: 600
    end
  end

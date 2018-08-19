@@ -22,6 +22,10 @@ Devise.setup do |config|
 
   config.navigational_formats = []
 
+  config.jwt do |jwt|
+    jwt.secret = '7c33c9b8b900962d90174709094c9c9fc0a1f7a37ca613c4c838c7487f99f40b65a61f5a19e828d7b25336bbe10ebe764fe33a1effc25f330b2c6e2e0ee8a70f'
+  end
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

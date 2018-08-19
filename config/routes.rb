@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, defaults: { format: :json }
   resources :cont_trans_sentence_spanishes
   resources :cont_trans_sentence_englishes
   resources :content_texts
