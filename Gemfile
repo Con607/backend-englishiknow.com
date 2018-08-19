@@ -23,6 +23,8 @@ gem 'mysql2'
 
 gem 'active_model_serializers', '~> 0.10.0'
 
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
