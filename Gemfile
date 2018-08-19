@@ -25,6 +25,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
