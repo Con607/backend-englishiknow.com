@@ -10,7 +10,7 @@
      origins '*'
 
      resource '*',
-       headers: :any,
+       headers: %w(Authorization),
        methods: :any,
        expose: %w(Authorization),
        max_age: 600
