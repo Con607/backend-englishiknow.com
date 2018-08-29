@@ -1,5 +1,5 @@
 class ContentTextsController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user!
   before_action :set_content_text, only: [:show, :update, :destroy]
 
   # GET /content_texts

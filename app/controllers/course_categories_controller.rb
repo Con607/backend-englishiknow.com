@@ -1,5 +1,5 @@
 class CourseCategoriesController < ApplicationController
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_course_category, only: [:show, :update, :destroy]
 
   # GET /course_categories
