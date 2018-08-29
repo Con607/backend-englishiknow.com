@@ -1,4 +1,5 @@
 class ContentTextsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_content_text, only: [:show, :update, :destroy]
 
   # GET /content_texts
@@ -8,7 +9,7 @@ class ContentTextsController < ApplicationController
     else
       @content_texts = ContentText.all
     end
-    
+
     render json: @content_texts
   end
 

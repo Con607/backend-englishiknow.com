@@ -1,4 +1,5 @@
 class QuizAnswersController < ApplicationController
+  before_action :authenticate_user
   before_action :set_quiz_answer, only: [:show, :update, :destroy]
 
   # GET /quiz_answers

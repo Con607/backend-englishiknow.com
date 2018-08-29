@@ -1,4 +1,5 @@
 class ContTransSentenceEnglishesController < ApplicationController
+  before_action :authenticate_user
   before_action :set_cont_trans_sentence_english, only: [:show, :update, :destroy]
 
   # GET /cont_trans_sentence_englishes
