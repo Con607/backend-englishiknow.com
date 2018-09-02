@@ -47,6 +47,7 @@ class PaypalPaymentsController < ApplicationController
     # JSON.parse(course_ids).each do |course_id| for postman to work needs json.parse
     course_ids.each do |course_id|
       CoursesPaypalpayment.create!(course_id: course_id, paypal_payment_id: paypal_payment_id)
+      StudentCourse.create!(course_id: course_id, student_id: current_user.student.id )
     end
   end
 
