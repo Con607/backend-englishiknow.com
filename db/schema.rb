@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180819231357) do
+ActiveRecord::Schema.define(version: 20180831173915) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
@@ -93,6 +93,15 @@ ActiveRecord::Schema.define(version: 20180819231357) do
     t.integer "lesson_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_course_ids"
+    t.integer "courses_paypalpayment_ids"
+  end
+
+  create_table "courses_paypalpayments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "paypal_payment_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "jwt_blacklist", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -113,6 +122,31 @@ ActiveRecord::Schema.define(version: 20180819231357) do
     t.datetime "updated_at", null: false
     t.integer "course_id"
     t.integer "cont_trans_sentence_spanish_ids"
+  end
+
+  create_table "paypal_payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.string "order_id"
+    t.string "payer_id"
+    t.string "payment_id"
+    t.string "payment_token"
+    t.string "cart"
+    t.datetime "create_time"
+    t.string "paypal_id"
+    t.string "intent"
+    t.string "payer_email"
+    t.string "payer_first_name"
+    t.string "payer_middle_name"
+    t.string "payer_last_name"
+    t.string "payment_method"
+    t.string "status"
+    t.string "currency"
+    t.float "total", limit: 24
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "courses_paypalpayment_ids"
+    t.string "country_code"
+    t.string "state"
   end
 
   create_table "quiz_answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -156,6 +190,8 @@ ActiveRecord::Schema.define(version: 20180819231357) do
     t.integer "course_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "student_course_ids"
+    t.index ["user_id"], name: "index_students_on_user_id", unique: true
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -166,6 +202,9 @@ ActiveRecord::Schema.define(version: 20180819231357) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "paypal_payment_ids"
+    t.integer "student_ids"
+    t.integer "author_ids"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

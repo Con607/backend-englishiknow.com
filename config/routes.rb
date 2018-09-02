@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, defaults: { format: :json }
+
+  resources :paypal_payments do
+    post 'assign_courses'
+  end
+
   resources :cont_trans_sentence_spanishes
   resources :cont_trans_sentence_englishes
   resources :content_texts
@@ -16,5 +20,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "lessons#index"
+
+  # devise_for :users, defaults: { format: :json }
+
+  devise_for :users,
+             controllers: {
+               sessions: 'sessions',
+               registrations: 'registrations'
+             },
+             defaults: { format: :json }
 
 end

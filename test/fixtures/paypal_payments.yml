@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  order_id: MyString
+  payer_id: MyString
+  payment_id: MyString
+  payment_token: MyString
+  cart: MyString
+  create_time: 2018-08-31 08:44:52
+  paypal_id: MyString
+  intent: MyString
+  payer_email: MyString
+  payer_first_name: MyString
+  payer_middle_name: MyString
+  payer_last_name: MyString
+  payer_id: MyString
+  payment_method: MyString
+  status: MyString
+  currency: MyString
+  total: 1.5
+
+two:
+  user_id: 1
+  order_id: MyString
+  payer_id: MyString
+  payment_id: MyString
+  payment_token: MyString
+  cart: MyString
+  create_time: 2018-08-31 08:44:52
+  paypal_id: MyString
+  intent: MyString
+  payer_email: MyString
+  payer_first_name: MyString
+  payer_middle_name: MyString
+  payer_last_name: MyString
+  payer_id: MyString
+  payment_method: MyString
+  status: MyString
+  currency: MyString
+  total: 1.5
