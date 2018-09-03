@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :word_examples
+  resources :word_lists
   resources :paypal_payments do
     post 'assign_courses'
   end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sentence: MyString
+  fast_video: MyString
+  slow_video: MyString
+  word_list_id: 1
+
+two:
+  sentence: MyString
+  fast_video: MyString
+  slow_video: MyString
+  word_list_id: 1
