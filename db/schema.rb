@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180903173629) do
+ActiveRecord::Schema.define(version: 20180903222235) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
@@ -211,21 +211,20 @@ ActiveRecord::Schema.define(version: 20180903173629) do
 
   create_table "word_examples", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "sentence"
-    t.string "fast_video"
-    t.string "slow_video"
     t.integer "word_list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sentence_slow_video"
+    t.string "sentence_fast_video"
   end
 
   create_table "word_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "word"
-    t.string "fast_video"
-    t.string "slow_video"
     t.integer "word_example_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "word_fast_video"
+    t.string "word_slow_video"
   end
 
 end

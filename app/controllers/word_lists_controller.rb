@@ -29,6 +29,7 @@ class WordListsController < ApplicationController
   def create_wsp
     @word_list = WordList.find(params[:word_list_id])
     @word_list.word_fast_video = params[:word_fast_video]
+    @word_list.word_slow_video = params[:word_slow_video]
 
     if @word_list.save
       render json: @word_list, status: :created, location: @word_list
@@ -59,6 +60,6 @@ class WordListsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def word_list_params
-      params.require(:word_list).permit(:word, :fast_video, :slow_video, :word_fast_video, :word_example_ids)
+      params.require(:word_list).permit(:word, :word_example_ids)
     end
 end

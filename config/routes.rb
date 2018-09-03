@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :word_examples
+
 
   resources :word_lists do
+
     post 'create_wsp'
+
+    resources :word_examples do
+      post 'create_ssp'
+    end
+
   end
+
+
 
   resources :paypal_payments do
     post 'assign_courses'
