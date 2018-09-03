@@ -25,6 +25,18 @@ class WordListsController < ApplicationController
     end
   end
 
+  # POST /word_lists
+  def create_wsp
+    @word_list = WordList.find(params[:word_list_id])
+    @word_list.word_fast_video = params[:word_fast_video]
+
+    if @word_list.save
+      render json: @word_list, status: :created, location: @word_list
+    else
+      render json: @word_list.errors, status: :unprocessable_entity
+    end
+  end
+
   # PATCH/PUT /word_lists/1
   def update
     if @word_list.update(word_list_params)
@@ -47,6 +59,6 @@ class WordListsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def word_list_params
-      params.require(:word_list).permit(:word, :fast_video, :slow_video, :word_example_ids)
+      params.require(:word_list).permit(:word, :fast_video, :slow_video, :word_fast_video, :word_example_ids)
     end
 end

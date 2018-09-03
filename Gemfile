@@ -27,6 +27,8 @@ gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'carrierwave'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
