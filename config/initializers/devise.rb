@@ -25,12 +25,12 @@ Devise.setup do |config|
   config.jwt do |jwt|
     jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
     jwt.dispatch_requests = [
-    ['POST', %r{^/users/sign_out$}]
+    ['POST', %r{^/users/sign_in$}]
   ]
   jwt.revocation_requests = [
-    ['DELETE', %r{^/users/sign_in$}]
+    ['DELETE', %r{^/users/sign_out$}]
   ]
-  jwt.expiration_time = 1.day.to_i
+  jwt.expiration_time = 1.hour.to_i
   end
 
   # Configure the class responsible to send e-mails.
@@ -101,7 +101,8 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:http_auth]
+  # config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = [:http_auth, :params_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX

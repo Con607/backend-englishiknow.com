@@ -29,5 +29,13 @@ module BackendEnglishiknowCom
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Disable cookies, we don't use them here
+    config.middleware.delete ActionDispatch::Cookies
+    config.middleware.delete ActionDispatch::Session::CookieStore
+
+    # No session, so don't bother with CSRF tokens
+    config.action_controller.allow_forgery_protection = false
+    
   end
 end

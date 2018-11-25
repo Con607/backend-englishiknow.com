@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180903222235) do
+ActiveRecord::Schema.define(version: 20180922204756) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20180903222235) do
     t.datetime "updated_at", null: false
     t.integer "student_course_ids"
     t.integer "courses_paypalpayment_ids"
+    t.string "images"
   end
 
   create_table "courses_paypalpayments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -205,6 +206,7 @@ ActiveRecord::Schema.define(version: 20180903222235) do
     t.integer "paypal_payment_ids"
     t.integer "student_ids"
     t.integer "author_ids"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,5 +1,6 @@
 class QuizQuestionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :is_admin, except: [:index, :show]
   before_action :set_quiz_question, only: [:show, :update, :destroy]
 
   # GET /quiz_questions

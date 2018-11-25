@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :is_admin, except: [:index, :show]
   before_action :set_course, only: [:show, :update, :destroy]
 
   # GET /courses
@@ -50,6 +51,9 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:author_id, :student_ids, :reviewed, :published,
         :course_section_ids, :course_category_id, :title, :description, :duration,
         :max_students, :featured, :passing_mark, :course_payment, :price, :sale_price,
-        :sale_start_date, :sale_end_date, :feature_image, :course_student_ids, :courses_paypalpayment_ids)
+        :sale_start_date, :sale_end_date, :feature_image, :course_student_ids, :courses_paypalpayment_ids, :images,
+        {images: []} )
     end
+
+
 end

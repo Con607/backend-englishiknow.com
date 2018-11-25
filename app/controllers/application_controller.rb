@@ -24,5 +24,18 @@ class ApplicationController < ActionController::API
     }, status: :bad_request
   end
 
+  def is_admin
+    puts '##########################################'
+    puts current_user.admin?
+    puts current_user.role
+    puts current_user.email
+    puts '##########################################'
+    unless current_user.admin?
+      # head is equivalent to a rendering
+      head(401)
+    end
+  end
+
+  
 
 end

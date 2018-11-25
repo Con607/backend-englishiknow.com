@@ -9,4 +9,8 @@ class Course < ApplicationRecord
   has_many :students, through: :student_courses
   has_many :courses_paypalpayments
   has_many :paypal_payments, through: :courses_paypalpayments
+
+
+  mount_uploader :images, CourseImageUploader
+
 end

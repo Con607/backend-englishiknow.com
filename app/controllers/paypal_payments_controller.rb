@@ -1,5 +1,6 @@
 class PaypalPaymentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :is_admin
   before_action :set_paypal_payment, only: [:show, :update, :destroy]
 
   # GET /paypal_payments

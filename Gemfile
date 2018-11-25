@@ -30,6 +30,7 @@ gem 'devise-jwt', '~> 0.5.7'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
